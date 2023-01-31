@@ -37,8 +37,7 @@ struct PicOfTodayView: View {
                         showSwitchDate.toggle()
                     }
             } else {
-                Rectangle()
-                    .fill(Color(.lightGray))
+                LoadingAnimationBox()
                     .frame(height: 400)
             }
                 ScrollView {

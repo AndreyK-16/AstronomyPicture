@@ -17,6 +17,7 @@
 		B68E854E2988569500543951 /* PicOfTodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68E854D2988569500543951 /* PicOfTodayView.swift */; };
 		B68E85502988578400543951 /* PhotoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68E854F2988578400543951 /* PhotoInfo.swift */; };
 		B68E855229891EA500543951 /* SelectDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68E855129891EA500543951 /* SelectDateView.swift */; };
+		B68E855429893E9100543951 /* LoadingAnimationBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68E855329893E9100543951 /* LoadingAnimationBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		B68E854D2988569500543951 /* PicOfTodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicOfTodayView.swift; sourceTree = "<group>"; };
 		B68E854F2988578400543951 /* PhotoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfo.swift; sourceTree = "<group>"; };
 		B68E855129891EA500543951 /* SelectDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDateView.swift; sourceTree = "<group>"; };
+		B68E855329893E9100543951 /* LoadingAnimationBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationBox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				B68E854D2988569500543951 /* PicOfTodayView.swift */,
 				B68E855129891EA500543951 /* SelectDateView.swift */,
+				B68E855329893E9100543951 /* LoadingAnimationBox.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			files = (
 				B68E855229891EA500543951 /* SelectDateView.swift in Sources */,
 				B68E85502988578400543951 /* PhotoInfo.swift in Sources */,
+				B68E855429893E9100543951 /* LoadingAnimationBox.swift in Sources */,
 				B68E854C2988528700543951 /* URLHelper.swift in Sources */,
 				B68E85472988506D00543951 /* NetworkManager.swift in Sources */,
 				B68E854E2988569500543951 /* PicOfTodayView.swift in Sources */,
