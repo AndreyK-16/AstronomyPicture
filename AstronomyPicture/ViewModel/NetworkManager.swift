@@ -13,28 +13,39 @@ class NetworkManager: ObservableObject {
     
     @Published var photoInfo = PhotoInfo()
     @Published var image: UIImage? = nil
+    @Published var date: Date = Date()
     
     private var subscriptions = Set<AnyCancellable>()
     
     init() {
-        // создаем полный url-адрес
+        // создаем полный url-адрес, дата = сегодня
         let url = URL(string: Constants.baseURL)!
         let fullURL = url.withQuery(["api_key" : Constants.key])!
         print(fullURL.absoluteString)
         
-        // получение данных
-        URLSession.shared.dataTaskPublisher(for: fullURL)
-            .map(\.data)
-//            .print()
-            .decode(type: PhotoInfo.self, decoder: JSONDecoder())
-            .catch { error in
-                Just(PhotoInfo())
+        $date // при обновлении даты обнулить картинку до ее обновления
+            .removeDuplicates()
+            .sink { _ in
+                self.image = nil
             }
-            .receive(on: DispatchQueue.main)
+            .store(in: &subscriptions)
+        
+        $date //срабатывает при изменении даты через PickerData
+            .removeDuplicates()
+            .map({ self.createURL(for: $0) })
+            .flatMap { url in
+                URLSession.shared.dataTaskPublisher(for: url)
+                    .map(\.data)
+                    .decode(type: PhotoInfo.self, decoder: JSONDecoder())
+                    .catch { error in
+                        Just(PhotoInfo())
+                    }
+            }
+            .receive(on: RunLoop.main)
             .assign(to: \.photoInfo, on: self)
             .store(in: &subscriptions)
         
-        $photoInfo
+        $photoInfo // обновление данных
             .filter({$0.url != nil })
             .map { photoInfo -> URL in
                 return photoInfo.url!
@@ -49,8 +60,18 @@ class NetworkManager: ObservableObject {
             .map { out -> UIImage? in
                 UIImage(data: out)
             }
-            .receive(on: DispatchQueue.main)
+            .receive(on: RunLoop.main)
             .assign(to: \.image, on: self)
             .store(in: &subscriptions)
+    }
+    /// обновление данных при изменении даты
+    func createURL(for date: Date) -> URL {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        let dateString = formatter.string(from: date)
+        
+        let url = URL(string: Constants.baseURL)!
+        let fullURL = url.withQuery(["api_key" : Constants.key, "date": dateString])!
+        return fullURL
     }
 }
