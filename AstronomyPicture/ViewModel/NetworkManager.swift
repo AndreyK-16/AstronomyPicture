@@ -18,10 +18,6 @@ class NetworkManager: ObservableObject {
     private var subscriptions = Set<AnyCancellable>()
     
     init() {
-        // создаем полный url-адрес, дата = сегодня
-        let url = URL(string: Constants.baseURL)!
-        let fullURL = url.withQuery(["api_key" : Constants.key])!
-        print(fullURL.absoluteString)
         
         $date // при обновлении даты обнулить картинку до ее обновления
             .removeDuplicates()
@@ -32,14 +28,9 @@ class NetworkManager: ObservableObject {
         
         $date //срабатывает при изменении даты через PickerData
             .removeDuplicates()
-            .map({ self.createURL(for: $0) })
+            .map({ API.createURL(for: $0) })
             .flatMap { url in
-                URLSession.shared.dataTaskPublisher(for: url)
-                    .map(\.data)
-                    .decode(type: PhotoInfo.self, decoder: JSONDecoder())
-                    .catch { error in
-                        Just(PhotoInfo())
-                    }
+                API.crearePublisher(url: url)
             }
             .receive(on: RunLoop.main)
             .assign(to: \.photoInfo, on: self)
@@ -63,15 +54,5 @@ class NetworkManager: ObservableObject {
             .receive(on: RunLoop.main)
             .assign(to: \.image, on: self)
             .store(in: &subscriptions)
-    }
-    /// обновление данных при изменении даты
-    func createURL(for date: Date) -> URL {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        let dateString = formatter.string(from: date)
-        
-        let url = URL(string: Constants.baseURL)!
-        let fullURL = url.withQuery(["api_key" : Constants.key, "date": dateString])!
-        return fullURL
     }
 }

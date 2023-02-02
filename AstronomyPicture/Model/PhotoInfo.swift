@@ -7,12 +7,19 @@
 
 import Foundation
 
-struct PhotoInfo: Codable {
+struct PhotoInfo: Codable, Identifiable {
     var title: String
     var description: String
     var url: URL?
     var copyright: String?
     var date: String
+    
+    let id = UUID()
+    
+    var formattedDate: Date {
+        let dateFormatter = API.createFormatter()
+        return dateFormatter.date(from: self.date) ?? Date()
+    }
     
     enum CodingKeys: String, CodingKey {
         case title = "title"

@@ -18,6 +18,10 @@
 		B68E85502988578400543951 /* PhotoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68E854F2988578400543951 /* PhotoInfo.swift */; };
 		B68E855229891EA500543951 /* SelectDateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68E855129891EA500543951 /* SelectDateView.swift */; };
 		B68E855429893E9100543951 /* LoadingAnimationBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68E855329893E9100543951 /* LoadingAnimationBox.swift */; };
+		B68E855629897C3400543951 /* MultiNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68E855529897C3400543951 /* MultiNetworkManager.swift */; };
+		B68E855829897C8700543951 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68E855729897C8700543951 /* API.swift */; };
+		B68E855A2989876E00543951 /* APODListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68E85592989876E00543951 /* APODListView.swift */; };
+		B68E855C2989894900543951 /* APODRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68E855B2989894900543951 /* APODRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +37,10 @@
 		B68E854F2988578400543951 /* PhotoInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoInfo.swift; sourceTree = "<group>"; };
 		B68E855129891EA500543951 /* SelectDateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDateView.swift; sourceTree = "<group>"; };
 		B68E855329893E9100543951 /* LoadingAnimationBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingAnimationBox.swift; sourceTree = "<group>"; };
+		B68E855529897C3400543951 /* MultiNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiNetworkManager.swift; sourceTree = "<group>"; };
+		B68E855729897C8700543951 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		B68E85592989876E00543951 /* APODListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODListView.swift; sourceTree = "<group>"; };
+		B68E855B2989894900543951 /* APODRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +105,9 @@
 			children = (
 				B68E854A2988526700543951 /* Helpers */,
 				B68E85462988506D00543951 /* NetworkManager.swift */,
+				B68E855529897C3400543951 /* MultiNetworkManager.swift */,
 				B68E85482988518300543951 /* Constants.swift */,
+				B68E855729897C8700543951 /* API.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -106,6 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				B68E854D2988569500543951 /* PicOfTodayView.swift */,
+				B68E85592989876E00543951 /* APODListView.swift */,
+				B68E855B2989894900543951 /* APODRow.swift */,
 				B68E855129891EA500543951 /* SelectDateView.swift */,
 				B68E855329893E9100543951 /* LoadingAnimationBox.swift */,
 			);
@@ -190,15 +202,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B68E855829897C8700543951 /* API.swift in Sources */,
 				B68E855229891EA500543951 /* SelectDateView.swift in Sources */,
 				B68E85502988578400543951 /* PhotoInfo.swift in Sources */,
+				B68E855629897C3400543951 /* MultiNetworkManager.swift in Sources */,
 				B68E855429893E9100543951 /* LoadingAnimationBox.swift in Sources */,
+				B68E855C2989894900543951 /* APODRow.swift in Sources */,
 				B68E854C2988528700543951 /* URLHelper.swift in Sources */,
 				B68E85472988506D00543951 /* NetworkManager.swift in Sources */,
 				B68E854E2988569500543951 /* PicOfTodayView.swift in Sources */,
 				B68E853729884EEC00543951 /* ContentView.swift in Sources */,
 				B68E853529884EEC00543951 /* AstronomyPictureApp.swift in Sources */,
 				B68E85492988518300543951 /* Constants.swift in Sources */,
+				B68E855A2989876E00543951 /* APODListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
