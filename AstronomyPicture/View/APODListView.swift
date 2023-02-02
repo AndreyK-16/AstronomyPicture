@@ -14,6 +14,19 @@ struct APODListView: View {
         List {
             ForEach(manager.infos) { info in
                 APODRow(photoInfo: info)
+                    .onAppear {
+                        if let index = self.manager.infos.firstIndex(where: {$0.id == info.id}),
+                            index == self.manager.infos.count - 1 &&
+                            self.manager.daysFromToday == self.manager.infos.count - 1 {
+                            self.manager.getMoreDate(for: 10)
+                        }
+                    }
+            }
+            
+            ForEach(0..<10) { _ in
+                Rectangle()
+                    .fill(.gray.opacity(0.2))
+                    .frame(height: 50)
             }
         }
     }
