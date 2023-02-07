@@ -22,6 +22,7 @@
 		B68E855829897C8700543951 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68E855729897C8700543951 /* API.swift */; };
 		B68E855A2989876E00543951 /* APODListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68E85592989876E00543951 /* APODListView.swift */; };
 		B68E855C2989894900543951 /* APODRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68E855B2989894900543951 /* APODRow.swift */; };
+		B68E855E298BFD5100543951 /* APODetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68E855D298BFD5100543951 /* APODetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		B68E855729897C8700543951 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		B68E85592989876E00543951 /* APODListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODListView.swift; sourceTree = "<group>"; };
 		B68E855B2989894900543951 /* APODRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODRow.swift; sourceTree = "<group>"; };
+		B68E855D298BFD5100543951 /* APODetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				B68E854D2988569500543951 /* PicOfTodayView.swift */,
 				B68E85592989876E00543951 /* APODListView.swift */,
 				B68E855B2989894900543951 /* APODRow.swift */,
+				B68E855D298BFD5100543951 /* APODetailView.swift */,
 				B68E855129891EA500543951 /* SelectDateView.swift */,
 				B68E855329893E9100543951 /* LoadingAnimationBox.swift */,
 			);
@@ -204,6 +207,7 @@
 			files = (
 				B68E855829897C8700543951 /* API.swift in Sources */,
 				B68E855229891EA500543951 /* SelectDateView.swift in Sources */,
+				B68E855E298BFD5100543951 /* APODetailView.swift in Sources */,
 				B68E85502988578400543951 /* PhotoInfo.swift in Sources */,
 				B68E855629897C3400543951 /* MultiNetworkManager.swift in Sources */,
 				B68E855429893E9100543951 /* LoadingAnimationBox.swift in Sources */,

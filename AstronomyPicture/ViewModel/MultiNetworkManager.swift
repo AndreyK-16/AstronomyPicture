@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 class MultiNetworkManager: ObservableObject {
     
@@ -45,8 +46,29 @@ class MultiNetworkManager: ObservableObject {
     }
     
     func getMoreDate(for times: Int) {
-        for i in 1..<times {
+        for _ in 1..<times {
             self.daysFromToday += 1
         }
+    }
+    /// функция получает фото в APODetatilView. используется для загрузки фото только после перехода с APOList на APODetatilView чтобы сразу не загружать все фото сразу при запуске приложения
+    func fetchImage(for photoInfo: PhotoInfo) {
+//        photoInfo.url
+        // получить фото
+        // добавить его в свойство image
+        
+        guard photoInfo.image == nil, let url = photoInfo.url else { return }
+        
+        let tast = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                print("fetch image error: \(error.localizedDescription)")
+            } else if let data = data, let image = UIImage(data: data), let index = self.infos.firstIndex(where: {$0.id == photoInfo.id}) {
+                
+                DispatchQueue.main.async {
+                    self.infos[index].image = image
+                }
+            }
+            
+        }
+        tast.resume()
     }
 }
