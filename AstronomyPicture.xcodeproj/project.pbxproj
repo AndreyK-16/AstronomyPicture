@@ -23,6 +23,8 @@
 		B68E855A2989876E00543951 /* APODListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68E85592989876E00543951 /* APODListView.swift */; };
 		B68E855C2989894900543951 /* APODRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68E855B2989894900543951 /* APODRow.swift */; };
 		B68E855E298BFD5100543951 /* APODetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68E855D298BFD5100543951 /* APODetailView.swift */; };
+		B6D7BD6B2992A648009A110D /* InteractiveImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7BD6A2992A648009A110D /* InteractiveImageView.swift */; };
+		B6D7BD6D2992B256009A110D /* Image helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D7BD6C2992B256009A110D /* Image helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		B68E85592989876E00543951 /* APODListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODListView.swift; sourceTree = "<group>"; };
 		B68E855B2989894900543951 /* APODRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODRow.swift; sourceTree = "<group>"; };
 		B68E855D298BFD5100543951 /* APODetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APODetailView.swift; sourceTree = "<group>"; };
+		B6D7BD6A2992A648009A110D /* InteractiveImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveImageView.swift; sourceTree = "<group>"; };
+		B6D7BD6C2992B256009A110D /* Image helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image helper.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,8 @@
 				B68E855D298BFD5100543951 /* APODetailView.swift */,
 				B68E855129891EA500543951 /* SelectDateView.swift */,
 				B68E855329893E9100543951 /* LoadingAnimationBox.swift */,
+				B6D7BD6A2992A648009A110D /* InteractiveImageView.swift */,
+				B6D7BD6C2992B256009A110D /* Image helper.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -205,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6D7BD6D2992B256009A110D /* Image helper.swift in Sources */,
 				B68E855829897C8700543951 /* API.swift in Sources */,
 				B68E855229891EA500543951 /* SelectDateView.swift in Sources */,
 				B68E855E298BFD5100543951 /* APODetailView.swift in Sources */,
@@ -217,6 +224,7 @@
 				B68E854E2988569500543951 /* PicOfTodayView.swift in Sources */,
 				B68E853729884EEC00543951 /* ContentView.swift in Sources */,
 				B68E853529884EEC00543951 /* AstronomyPictureApp.swift in Sources */,
+				B6D7BD6B2992A648009A110D /* InteractiveImageView.swift in Sources */,
 				B68E85492988518300543951 /* Constants.swift in Sources */,
 				B68E855A2989876E00543951 /* APODListView.swift in Sources */,
 			);

@@ -23,6 +23,16 @@ struct APODetailView: View {
             if photoInfo.image != nil {
                 Image(uiImage: self.photoInfo.image!)
                     .resizable()
+                    .overlay(alignment: .bottomTrailing) {
+                        NavigationLink(destination: {
+                            InteractiveImageView(image: self.photoInfo.image!)
+                        }, label: {
+                            Image(systemName: "magnifyingglass.circle.fill")
+                                .font(.title)
+                                .foregroundColor(.blue)
+                                .padding()
+                        })
+                    }
             } else {
                 LoadingAnimationBox()
                     .frame(height: 400)
